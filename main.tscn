@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl0yll64dgru1"]
+
+[ext_resource type="PackedScene" uid="uid://djye15mpgm4nl" path="res://hud.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://qagveamuuwg7" path="res://player.tscn" id="2_h2yge"]
+
+[node name="Main" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource("2_h2yge")]
+
+[node name="HUD" parent="." instance=ExtResource("1_0xm2m")]
