@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://djye15mpgm4nl"]
+
+[ext_resource type="Texture2D" uid="uid://b4xnrsq3q4axy" path="res://closet.png" id="1_37p78"]
+[ext_resource type="Script" uid="uid://b0ujemffk6srl" path="res://hud.gd" id="1_64ctp"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_64ctp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_37p78")
