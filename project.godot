@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="closet"
+run/main_scene="uid://bl0yll64dgru1"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
@@ -68,4 +69,5 @@ move_downS={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
