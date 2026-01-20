@@ -7,11 +7,9 @@
 [node name="Game" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(149, 346)
-scale = Vector2(2.5026, 2.5026)
 texture = ExtResource("1_e2o6t")
 
 [node name="Player" parent="." instance=ExtResource("2_feb5d")]
-position = Vector2(335, 414)
+position = Vector2(63, 27)
 
 [node name="ExerciseObject" parent="." instance=ExtResource("3_feb5d")]

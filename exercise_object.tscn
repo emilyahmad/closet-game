@@ -5,12 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://y3ndpd5bhsi3" path="res://graphics/objects/tree2.png" id="2_260au"]
 
 [node name="ExerciseObject" type="Node2D"]
+position = Vector2(-20, -39)
 script = ExtResource("1_260au")
 
 [node name="Tree1" type="Sprite2D" parent="."]
-position = Vector2(140, 119)
+position = Vector2(178, 268)
 texture = ExtResource("1_3mil3")
 
 [node name="Tree2" type="Sprite2D" parent="."]
-position = Vector2(157, 114)
+position = Vector2(195, 263)
 texture = ExtResource("2_260au")
