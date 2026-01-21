@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bl0yll64dgru1"]
+[gd_scene load_steps=7 format=3 uid="uid://bl0yll64dgru1"]
 
 [ext_resource type="Texture2D" uid="uid://doghmovcgeltw" path="res://graphics/map.png" id="1_e2o6t"]
+[ext_resource type="Script" uid="uid://dnh562y3yxsbc" path="res://game.gd" id="1_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://bvlksommhalib" path="res://player.tscn" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://b5h5odv6dclq5" path="res://exercise_object.tscn" id="3_feb5d"]
 
@@ -11,14 +12,10 @@ size = Vector2(22, 654)
 size = Vector2(410, 20)
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_fc0e3")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="BG" type="Sprite2D" parent="."]
 texture = ExtResource("1_e2o6t")
-
-[node name="Player" parent="." instance=ExtResource("2_feb5d")]
-position = Vector2(63, 27)
-
-[node name="Tree" parent="." instance=ExtResource("3_feb5d")]
 
 [node name="Borders" type="Node2D" parent="."]
 
@@ -32,7 +29,7 @@ shape = SubResource("RectangleShape2D_feb5d")
 position = Vector2(407, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D2"]
-position = Vector2(-203, -7)
+position = Vector2(-204, -19)
 shape = SubResource("RectangleShape2D_feb5d")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Borders"]
@@ -44,3 +41,55 @@ shape = SubResource("RectangleShape2D_fc0e3")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders/StaticBody2D3"]
 position = Vector2(0, 330)
 shape = SubResource("RectangleShape2D_fc0e3")
+
+[node name="FinishArea2D" type="Area2D" parent="Borders"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Borders/FinishArea2D"]
+polygon = PackedVector2Array(-191, -320, -192, -178, 192, -180, 191, -321)
+
+[node name="Timer2" type="Timer" parent="."]
+
+[node name="CarTimer" type="Timer" parent="Timer2"]
+autostart = true
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="Player" parent="Objects" instance=ExtResource("2_feb5d")]
+position = Vector2(63, 27)
+
+[node name="Tree" parent="Objects" instance=ExtResource("3_feb5d")]
+
+[node name="CarStartPositions" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="CarStartPositions"]
+position = Vector2(204, 9)
+
+[node name="Marker2D6" type="Marker2D" parent="CarStartPositions"]
+position = Vector2(-204, 0)
+
+[node name="Marker2D7" type="Marker2D" parent="CarStartPositions"]
+position = Vector2(-204, -34)
+
+[node name="Marker2D8" type="Marker2D" parent="CarStartPositions"]
+position = Vector2(-204, -56)
+
+[node name="Marker2D9" type="Marker2D" parent="CarStartPositions"]
+position = Vector2(-204, -98)
+
+[node name="Marker2D10" type="Marker2D" parent="CarStartPositions"]
+position = Vector2(-204, -122)
+
+[node name="Marker2D2" type="Marker2D" parent="CarStartPositions"]
+position = Vector2(204, -110)
+
+[node name="Marker2D3" type="Marker2D" parent="CarStartPositions"]
+position = Vector2(204, -87)
+
+[node name="Marker2D4" type="Marker2D" parent="CarStartPositions"]
+position = Vector2(204, -47)
+
+[node name="Marker2D5" type="Marker2D" parent="CarStartPositions"]
+position = Vector2(204, -15)
+
+[connection signal="body_entered" from="Borders/FinishArea2D" to="." method="_on_finish_area_2d_body_entered"]
+[connection signal="timeout" from="Timer2/CarTimer" to="." method="_on_car_timer_timeout"]
