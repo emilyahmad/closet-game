@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://b51csr0o7ok7i"]
+
+[ext_resource type="FontFile" uid="uid://dr201ov4c76pb" path="res://fonts/Crackman.otf" id="1_quvj1"]
+[ext_resource type="Texture2D" uid="uid://bkgrir378horu" path="res://graphics/player/player_simple.png" id="2_e4n62"]
+[ext_resource type="FontFile" uid="uid://hqpa84d2dqvp" path="res://fonts/Better VCR 9.0.1.ttf" id="3_rg4ux"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1277.0
+offset_bottom = 1220.0
+color = Color(0.623546, 0.238262, 0.645496, 0.4)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -497.0
+offset_top = -181.0
+offset_right = 511.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_quvj1")
+theme_override_font_sizes/font_size = 200
+text = "Car Game"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.0
+offset_top = 109.0
+offset_right = 103.0
+offset_bottom = 359.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_e4n62")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -224.0
+offset_top = 32.0
+offset_right = 226.0
+offset_bottom = 82.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_rg4ux")
+theme_override_font_sizes/font_size = 40
+text = "High Score: 999"
