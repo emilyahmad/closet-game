@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="closet"
-run/main_scene="uid://bl0yll64dgru1"
+run/main_scene="uid://b51csr0o7ok7i"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1280
-window/size/viewport_height=1218
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [editor_plugins]
 

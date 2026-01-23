@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://diesp7wopcvyu"]
+
+[ext_resource type="Texture2D" uid="uid://bllk2jsbskm4l" path="res://graphics/objects/star0.png" id="1_46ao5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2x7v"]
+size = Vector2(16.25, 20.25)
+
+[node name="Star" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_46ao5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.03125, 0.46875)
+scale = Vector2(0.25, 0.25)
+shape = SubResource("RectangleShape2D_e2x7v")

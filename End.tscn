@@ -1,0 +1,104 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdtdwvuanxdru"]
+
+[ext_resource type="Script" uid="uid://bk0qtw7cls5hq" path="res://title.gd" id="1_oufnp"]
+[ext_resource type="FontFile" uid="uid://dr201ov4c76pb" path="res://fonts/Crackman.otf" id="2_bxfto"]
+[ext_resource type="Texture2D" uid="uid://bkgrir378horu" path="res://graphics/player/player_simple.png" id="3_x4165"]
+[ext_resource type="Texture2D" uid="uid://b8fq8sgkmu4dx" path="res://graphics/objects/green car.png" id="4_4p6m0"]
+[ext_resource type="FontFile" uid="uid://hqpa84d2dqvp" path="res://fonts/Better VCR 9.0.1.ttf" id="5_checf"]
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oufnp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.623546, 0.238262, 0.645496, 0.4)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -625.0
+offset_right = -435.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_x4165")
+
+[node name="TextureRect2" type="TextureRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -666.0
+offset_top = 481.0
+offset_right = -476.0
+offset_bottom = 731.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.89535
+texture = ExtResource("4_4p6m0")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1307.0
+offset_top = 825.0
+offset_right = 1699.0
+offset_bottom = 936.0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("5_checf")
+theme_override_font_sizes/font_size = 30
+text = "Cool beans."
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -78.0
+offset_right = 658.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_checf")
+theme_override_font_sizes/font_size = 40
+text = "Awesome job not dying.
+
+I'm working on adding more
+levels and making it more fun -
+please stay tuned :)"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -502.0
+offset_top = -333.0
+offset_right = 506.0
+offset_bottom = -92.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_bxfto")
+theme_override_font_sizes/font_size = 200
+text = "You Won!!"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

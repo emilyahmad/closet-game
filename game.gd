@@ -4,9 +4,12 @@ var car_scene: PackedScene = preload("res://car.tscn")
 var score: int
 
 func _on_finish_area_2d_body_entered(_body: Node2D) -> void:
-	call_deferred("change_scene")
+	call_deferred("died_scene")
 
-func change_scene():
+func died_scene():
+	get_tree().change_scene_to_file("res://Died.tscn")
+
+func start_scene():
 	get_tree().change_scene_to_file("res://Title.tscn")
 
 func _on_car_timer_timeout() -> void:
@@ -19,7 +22,7 @@ func _on_car_timer_timeout() -> void:
 func go_to_title(_body):
 	print(_body)
 	print('player car collision')
-	call_deferred("change_scene")
+	call_deferred("died_scene")
 
 func _on_score_timer_timeout() -> void:
 	score += 1
