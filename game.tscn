@@ -26,13 +26,14 @@
 [ext_resource type="PackedScene" uid="uid://diesp7wopcvyu" path="res://star.tscn" id="24_f1jbl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_feb5d"]
-size = Vector2(22, 654)
+size = Vector2(22, 666)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fc0e3"]
 size = Vector2(410, 20)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhcbd"]
 radius = 7.0
+height = 16.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1jbl"]
 size = Vector2(8, 11)
@@ -60,7 +61,7 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D2"]
-position = Vector2(-204, -19)
+position = Vector2(-204, -13)
 shape = SubResource("RectangleShape2D_feb5d")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Borders"]
@@ -671,11 +672,11 @@ position = Vector2(88, 296)
 shape = SubResource("CapsuleShape2D_qhcbd")
 
 [node name="CollisionShape2D38" type="CollisionShape2D" parent="Stuff/StaticBody2D"]
-position = Vector2(125, 303)
+position = Vector2(125, 305)
 shape = SubResource("CapsuleShape2D_qhcbd")
 
 [node name="CollisionShape2D39" type="CollisionShape2D" parent="Stuff/StaticBody2D"]
-position = Vector2(138, 270)
+position = Vector2(138, 267)
 shape = SubResource("CapsuleShape2D_qhcbd")
 
 [node name="CollisionShape2D40" type="CollisionShape2D" parent="Stuff/StaticBody2D"]
@@ -835,7 +836,7 @@ position = Vector2(172, 69)
 shape = SubResource("RectangleShape2D_f1jbl")
 
 [node name="CollisionShape2D67" type="CollisionShape2D" parent="Stuff/StaticBody2D"]
-position = Vector2(172, 69)
+position = Vector2(172, 67)
 shape = SubResource("RectangleShape2D_f1jbl")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -858,6 +859,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Star" parent="." instance=ExtResource("24_f1jbl")]
 position = Vector2(173, 296)
+collision_layer = 1
+collision_mask = 2
 
 [connection signal="body_entered" from="Borders/FinishArea2D" to="." method="_on_finish_area_2d_body_entered"]
 [connection signal="child_order_changed" from="Borders/FinishArea2D" to="." method="_on_finish_area_2d_child_order_changed"]

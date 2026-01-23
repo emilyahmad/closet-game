@@ -1,10 +1,17 @@
 extends Node2D
 
 var car_scene: PackedScene = preload("res://car.tscn")
+var star_scene: PackedScene = preload("res://star.tscn")
+var end_scene: PackedScene = preload("res://end.tscn")
 var score: int
 
+func _ready():
+	var star = star_scene.instantiate() as Area2D
+	$Objects.add_child(star)
+	print("works")
+
 func _on_finish_area_2d_body_entered(_body: Node2D) -> void:
-	call_deferred("died_scene")
+	call_deferred("end_scene")
 
 func died_scene():
 	get_tree().change_scene_to_file("res://Died.tscn")
