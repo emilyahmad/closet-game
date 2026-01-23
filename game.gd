@@ -2,7 +2,7 @@ extends Node2D
 
 var car_scene: PackedScene = preload("res://car.tscn")
 var star_scene: PackedScene = preload("res://star.tscn")
-var end_scene: PackedScene = preload("res://end.tscn")
+var end_scene: PackedScene = preload("res://End.tscn")
 var score: int
 
 func _ready():
